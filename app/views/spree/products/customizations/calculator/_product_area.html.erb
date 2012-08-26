@@ -11,7 +11,13 @@
         return 0;
       }
 
-      var area = $(fields[0]).val() * $(fields[1]).val();
+      // FIXME a workaround for missing locale support
+      var width = $(fields[0]).val();
+      var height = $(fields[1]).val();
+      width = width.replace(',', '.');
+      height = height.replace(',', '.');
+
+      var area = width * height;
 
       // from http://stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
 
