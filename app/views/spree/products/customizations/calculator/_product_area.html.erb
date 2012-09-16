@@ -32,8 +32,10 @@
       }
 
       var mult=<%= calculator.preferred_multiplier %>;
+      var configuration_price = compute_configuration_price();
+      var m2price = mult + configuration_price;
 
-      return area * mult;
+      return area * m2price;
     }
   <% end %>
 <% end %>

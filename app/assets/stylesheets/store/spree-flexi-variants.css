@@ -1,5 +1,5 @@
-/*fieldset{
-	background-color:#dddddd;
+fieldset{
+	background-color:#ffffff;
 
 	border-width:1px;
 	border-style:solid;
@@ -29,16 +29,14 @@ fieldset label {
 }
 
 fieldset legend{
-	background-color:#2e6ab1;
+	background-color:#00ADEE;
 
 	border-width:1px;
 	border-style:solid;
 	border-color:#666;
 
-	color:#ddd;
+	color:#ffffff;
 	font-weight:bold;
-	font-variant:small-caps;
-	font-size:110%;
 
 	padding:2px 5px;
 	margin:0px 0px 10px 0px;
@@ -50,7 +48,7 @@ fieldset legend{
 .error {
   color: #d33;
 }
-*/
+
 /* for customization images in the line items
 we've got two versions line items: line_items & line-items
 */

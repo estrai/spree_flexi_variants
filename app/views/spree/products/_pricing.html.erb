@@ -22,6 +22,7 @@
 
     // 'updatePrice()' takes the base price + current 'configuration' adjustments + 'customization' adjustments
 
+    //var base_price=<%= @product.price == 0 ? @product.cost_price : @product.price %>;
     var base_price=<%= @product.price %>;
 
     // keep track of ad_hoc adjustments
@@ -42,6 +43,9 @@
       };
     })();
 
+<%# width_dom_id = "product_area_input_#{product_customization_type.customizable_product_options.first.id}" %>
+<% width_dom_id = "product_area_input_1" %>
+
     $(function() {
 
       // watch for variant changes
@@ -51,7 +55,7 @@
 
       // 'watch' our configurations
       $('.ad-hoc-option-select').change(function() {
-
+        $('#<%= width_dom_id %>').keyup();
         // get _every_ option drop down and recalculate product price
         // do this immediately, since we are not waiting on the results of the exlusions post
         updatePrice();
@@ -116,9 +120,10 @@
   function updatePrice() {
 
     var cur_variant_price_diff       = compute_variant_price_diff(base_price);
-    var cur_configuration_price =  compute_configuration_price();
+//    var cur_configuration_price =  compute_configuration_price();
     var cur_customization_price =  compute_customization_price();
-    var cur_price =base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
+//    var cur_price =base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
+    var cur_price = base_price + cur_variant_price_diff + cur_customization_price;
 
     $('.price.selling').text(cur_price.toFixed(2));
     // FIXME it's almost undoable to extend that with deface
